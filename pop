@@ -1,0 +1,17 @@
+if [ $# -ne 2 ]; then
+    echo "Usage: pop -option"
+    echo "  -m morning"
+    echo "  -n night"
+    echo "  -o other"
+    exit 1
+fi
+
+option=$1
+
+case "$option" in
+    '-m') popfile morning;;
+    '-n') popfile night;;
+    '-o') popfile other;;
+    *) echo Unknown option
+        exit 1;;
+esac

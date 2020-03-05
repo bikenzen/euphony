@@ -1,0 +1,8 @@
+if [ $# -ne 2 ]; then
+	echo 'Usage: addto filename "content"'
+fi
+
+file=$1
+song=$2
+
+echo "$song" >> "$file"
