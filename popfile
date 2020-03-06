@@ -1,5 +1,5 @@
 file=$1
 
 head -1 "$file"
-tail -n+2 "$file" > "/tmp/$file"
-mv "/tmp/$file" "$file"
+tail -n+2 "$file" > "/tmp/$(basename $file)"
+mv "/tmp/$(basename $file)" "$file"

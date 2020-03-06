@@ -1,4 +1,4 @@
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
     echo "Usage: pop -option"
     echo "  -m morning"
     echo "  -n night"
@@ -7,11 +7,12 @@ if [ $# -ne 2 ]; then
 fi
 
 option=$1
+path="/home/sean/Coding/euphony/"
 
 case "$option" in
-    '-m') popfile morning;;
-    '-n') popfile night;;
-    '-o') popfile other;;
+    '-m') popfile "${path}morning";;
+    '-n') popfile "${path}night";;
+    '-o') popfile "${path}other";;
     *) echo Unknown option
         exit 1;;
 esac

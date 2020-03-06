@@ -1,0 +1,38 @@
+if [ $# -ne 2 ]; then
+	echo "Usage: <option> song"
+	echo "option:"
+	echo "  -m morning"
+	echo "  -n night"
+	echo "  -o other"
+	exit 1
+fi
+
+option="$1"
+song="$2"
+path="/home/sean/Coding/euphony/"
+
+# create files at first time
+for file in "${path}all_morning" "${path}all_night" \
+			"${path}all_other" "${path}morning" "${path}night" \
+			"${path}other"; do
+	if [ ! -e "$file" ]; then
+		touch "$file"
+	fi
+done
+
+# check if song already exists
+if grep "$song" "${path}all_morning" "${path}all_night" "${path}all_other" > /dev/null; then
+	echo "Song already exist."
+	exit 1
+fi
+
+case "$option" in 
+	'-m') addto "${path}all_morning" "$song"
+	      addto "${path}morning" "$song";;
+	'-n') addto "${path}all_night" "$song"
+	      addto "${path}night" "$song";;
+	'-o') addto "${path}all_other" "$song"
+	      addto "${path}other" "$song";;
+	   *) echo Unknown option
+	      exit 1
+esac

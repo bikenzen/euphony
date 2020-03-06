@@ -1,0 +1,18 @@
+if [ $# -ne 1 ]; then
+    echo "Usage: -option"
+    echo "  -m morning"
+    echo "  -n night"
+    echo "  -o other"
+    exit 1
+fi
+
+option=$1
+path="/home/sean/Coding/euphony/"
+
+case "$option" in
+    '-m') cat "${path}morning";;
+    '-n') cat "${path}night";;
+    '-o') cat "${path}other";;
+    *) echo "Unknown option"
+       exit 1;;
+esac
