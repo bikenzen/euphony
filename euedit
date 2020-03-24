@@ -1,0 +1,19 @@
+if [ $# -ne 1 ]; then
+    echo "Usage: <option>"
+    echo "  -m:  morning"
+    echo "  -n:  night"
+    echo "  -o:  other"
+    exit 1
+fi
+
+dir=$HOME/Coding/euphony/
+opt=$1
+
+case "$opt" in
+	'-m') vim ${dir}morning;;
+	'-n') vim ${dir}night;;
+	'-o') vim ${dir}other;;
+	*) echo "Unkown option"
+	   exit 1
+esac
+
