@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 option=$1
-path="/home/sean/Coding/euphony/"
+path="$HOME/Code/euphony/"
 
 case "$option" in
     '-m') popfile "${path}morning";;

@@ -6,7 +6,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-dir=$HOME/Coding/euphony/
+dir=$HOME/Code/euphony/
 opt=$1
 
 case "$opt" in

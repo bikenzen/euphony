@@ -9,7 +9,7 @@ fi
 
 option="$1"
 song="$2"
-path="/home/sean/Coding/euphony/"
+path="$HOME/Code/euphony/"
 
 # create files at first time
 for file in "${path}all_morning" "${path}all_night" \
